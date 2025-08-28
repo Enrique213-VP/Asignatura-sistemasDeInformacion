@@ -1,0 +1,607 @@
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
+}
+
+.header-text {
+    text-align: left;
+    flex: 1;
+}
+
+.header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.university-name {
+    color: #34495e;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.faculty-name {
+    color: #5a6c7d;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.course-details {
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.1) 0%, rgba(196, 30, 58, 0.1) 100%);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #c41e3a;
+    margin-bottom: 20px;
+}
+
+.course-info {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.info-item {
+    background: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 1px solid #e9ecef;
+}
+
+.professor-info {
+    text-align: center;
+    color: #444;
+    font-weight: 500;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+/* Sections */
+.section {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 3px solid #34495e;
+    padding-bottom: 15px;
+}
+
+/* Objective Cards */
+.objective-card {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(52, 73, 94, 0.3);
+    transition: transform 0.3s ease;
+    position: relative;
+    border-left: 4px solid #5a6c7d;
+}
+
+.objective-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
+}
+
+.objective-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.objective-text {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Attendance */
+.attendance-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: rgba(52, 73, 94, 0.05);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #34495e;
+}
+
+.attendance-info {
+    flex: 1;
+}
+
+.attendance-info h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.attendance-info p {
+    color: #5a6c7d;
+    line-height: 1.6;
+}
+
+.attendance-form {
+    flex: 1;
+    max-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #34495e;
+    box-shadow: 0 0 0 3px rgba(52, 73, 94, 0.1);
+}
+
+.form-group input.error {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 73, 94, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 73, 94, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Grades */
+.grades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.grade-card {
+    background: rgba(52, 73, 94, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    border-left: 4px solid #34495e;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.grade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(52, 73, 94, 0.15);
+}
+
+.grade-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(52, 73, 94, 0.1);
+}
+
+.grade-percentage {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 3px 10px rgba(52, 73, 94, 0.3);
+}
+
+.grade-header h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.grade-subtypes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+.subtype {
+    color: #5a6c7d;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Modules */
+.modules-section {
+    margin-bottom: 40px;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.module-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.module-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.module-card.active {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(30, 60, 114, 0.1);
+}
+
+.module-card.active .module-header {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.module-number {
+    background: linear-gradient(45deg, #1e3c72, #c41e3a);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.module-card.active .module-number {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.module-title {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.module-card.active .module-title {
+    color: white;
+}
+
+.subtopics {
+    list-style: none;
+    margin-left: 0;
+}
+
+.subtopics li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(30, 60, 114, 0.1);
+    font-size: 1rem;
+    position: relative;
+    padding-left: 25px;
+    transition: all 0.3s ease;
+}
+
+.subtopics li:hover {
+    padding-left: 30px;
+    color: #c41e3a;
+}
+
+.module-card.active .subtopics li:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.subtopics li:before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #c41e3a;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.module-card.active .subtopics li:before {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.module-card.active .subtopics li {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.subtopics li:last-child {
+    border-bottom: none;
+}
+
+/* Bibliography */
+.bibliography-list {
+    list-style: none;
+}
+
+.bibliography-list li {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.08) 0%, rgba(196, 30, 58, 0.08) 100%);
+    border-radius: 12px;
+    border-left: 5px solid #c41e3a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.bibliography-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.modal h3 {
+    color: #e74c3c;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.modal p {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.modal-close {
+    background: #34495e;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #2c3e50;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 20%, 40%, 60%, 80% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+}
+
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(-50px) scale(0.8); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .header-text {
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .modules-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .module-card {
+        padding: 25px;
+    }
+
+    .attendance-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .attendance-form {
+        max-width: 100%;
+    }
+
+    .grades-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .grade-card {
+        padding: 20px;
+    }
+
+    .course-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

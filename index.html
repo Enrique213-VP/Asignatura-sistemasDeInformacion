@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/images/icon.png">
+    <title>Sistemas de Información - Universidad Nacional de Colombia</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header fade-in">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="./assets/images/logo.png" alt="Universidad Nacional de Colombia" class="logo-image">
+                </div>
+                
+                <div class="header-text">
+                    <h1>Sistemas de Información</h1>
+                    <div class="university-name">Universidad Nacional de Colombia</div>
+                    <div class="faculty-name">Facultad de Ingeniería</div>
+                </div>
+            </div>
+            
+            <div class="course-details">
+                <div class="course-info">
+                    <div class="info-item"><strong>Código:</strong> 2025982</div>
+                    <div class="info-item"><strong>Créditos:</strong> 3</div>
+                    <div class="info-item"><strong>Intensidad:</strong> 4 horas semanales</div>
+                </div>
+                <div class="professor-info">
+                    <strong>Profesor:</strong> Sergio Enrique Vargas Pedraza<br>
+                    <strong>Email:</strong> sevargasp@unal.edu.co<br>
+                    <em>Departamento de Ingeniería de Sistemas e Industrial</em>
+                </div>
+            </div>
+        </header>
+
+        <!-- Objectives -->
+        <section class="section fade-in">
+            <h2>Objetivos del Curso</h2>
+            <div class="objective-card">
+                <div class="objective-label">Objetivo General</div>
+                <div class="objective-text">
+                    Al final del curso el estudiante debe estar en capacidad de definir, describir, reconocer, analizar y evaluar sistemas de información mediante metodologías que faciliten la comprensión de los mismos.
+                </div>
+            </div>
+            <div class="objective-card">
+                <div class="objective-label">Competencias Desarrolladas</div>
+                <div class="objective-text">
+                    Análisis, diseño, evaluación e implementación de sistemas de información empresariales con aplicación de tecnologías avanzadas y conceptos fundamentales de TI.
+                </div>
+            </div>
+        </section>
+
+        <!-- Attendance -->
+        <section class="section fade-in">
+            <h2>Control de Asistencia</h2>
+            <div class="attendance-card">
+                <div class="attendance-info">
+                    <h3>Registro de Asistencia a Clases</h3>
+                    <p>Ingrese el código proporcionado en clase para acceder a su registro de asistencia.</p>
+                </div>
+                <div class="attendance-form">
+                    <div class="form-group">
+                        <label for="attendanceCode">Código de Acceso:</label>
+                        <input type="text" id="attendanceCode" placeholder="Código de clase" maxlength="15">
+                    </div>
+                    <button onclick="checkAttendance()" class="btn-primary">Acceder al Registro</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grades -->
+        <section class="section fade-in">
+            <h2>Sistema de Evaluación</h2>
+            <div class="grades-grid">
+                <div class="grade-card">
+                    <div class="grade-header">
+                        <div class="grade-percentage">30%</div>
+                        <h3>Parciales</h3>
+                    </div>
+                    <p>Evaluaciones teóricas y prácticas sobre los módulos del curso</p>
+                </div>
+                
+                <div class="grade-card">
+                    <div class="grade-header">
+                        <div class="grade-percentage">40%</div>
+                        <h3>Talleres</h3>
+                    </div>
+                    <div class="grade-subtypes">
+                        <span class="subtype">• Exposiciones</span>
+                        <span class="subtype">• Trabajos en grupo</span>
+                        <span class="subtype">• Trabajos individuales</span>
+                    </div>
+                    <p>Actividades prácticas y colaborativas durante el semestre</p>
+                </div>
+                
+                <div class="grade-card">
+                    <div class="grade-header">
+                        <div class="grade-percentage">30%</div>
+                        <h3>Proyecto Final</h3>
+                    </div>
+                    <p>Desarrollo e implementación de un sistema de información completo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules -->
+        <section class="modules-section">
+            <div class="modules-grid" id="modulesContainer">
+                <!-- Modules will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Bibliography -->
+        <section class="section fade-in">
+            <h2>Bibliografía</h2>
+            <ul class="bibliography-list">
+                <li><strong>Alvaro V., Suarez C.</strong> Sistemas de Información. Herramientas Prácticas para la Gestión Empresarial. 4ª Edición ampliada y actualizada. Editorial Alfaomega Ra-Ma 2012</li>
+                <li><strong>Laudon, K.C. & Laudon, J.P.</strong> (2012) Management Information Systems: Managing the Digital Firm. Prentice Hall. 12th Edition.</li>
+                <li><strong>Bruce Silver.</strong> BPMN Method and Style: A levels-based methodology for BPM process modeling and improvement using BPMN 2.0. Cody-Cassidy Press, 2009. USA</li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Departamento de Ingeniería de Sistemas e Industrial</p>
+            <p>Sede Bogotá - 2025</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">🚫 ¡Ups! Código incorrecto</h3>
+            <p id="modalMessage"></p>
+            <button class="modal-close" onclick="closeModal()">Entendido</button>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
