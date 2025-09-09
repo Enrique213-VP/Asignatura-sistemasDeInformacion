@@ -1,5 +1,5 @@
 const ATTENDANCE_CONFIG = {
-    validCodes: ['SI2025', 'SISTEMAS2025'],
+    validCodes: ['POSTMAN', 'EXCEL'],
     excelUrl: 'https://docs.google.com/spreadsheets/d/1WQ4HWhgxy5VIyP_l3ylDl-Ka1pSjB8XeiIF6opmDXjM/edit?usp=sharing'
 };
 
