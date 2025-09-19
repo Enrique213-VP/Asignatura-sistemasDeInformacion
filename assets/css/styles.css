@@ -442,6 +442,152 @@ body {
     border-bottom: none;
 }
 
+/* Taller */
+.taller-card {
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.05) 0%, rgba(30, 60, 114, 0.05) 100%);
+    border-radius: 15px;
+    padding: 30px;
+    border-left: 5px solid #c41e3a;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.taller-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(196, 30, 58, 0.15);
+}
+
+.taller-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.taller-info h3 {
+    color: #c41e3a;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.taller-info p {
+    color: #5a6c7d;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.taller-objectives {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 3px solid #1e3c72;
+}
+
+.taller-objectives h4 {
+    color: #1e3c72;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.taller-objectives ul {
+    margin-left: 20px;
+    color: #5a6c7d;
+}
+
+.taller-objectives li {
+    padding: 5px 0;
+    line-height: 1.5;
+}
+
+.taller-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-item {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border-left: 3px solid #34495e;
+}
+
+.taller-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.pdf-preview {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px dashed #c41e3a;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.pdf-preview:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.02);
+}
+
+.pdf-icon {
+    font-size: 3rem;
+    color: #c41e3a;
+    margin-bottom: 10px;
+}
+
+.pdf-info h4 {
+    color: #1e3c72;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.pdf-info p {
+    color: #5a6c7d;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #c41e3a 0%, #b71c3c 100%);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+    min-width: 200px;
+    justify-content: center;
+}
+
+.btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
+    background: linear-gradient(135deg, #b71c3c 0%, #a11a38 100%);
+}
+
+.btn-download:active {
+    transform: translateY(-1px);
+}
+
 /* Bibliography */
 .bibliography-list {
     list-style: none;
@@ -603,5 +749,20 @@ body {
     .course-info {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .taller-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pdf-preview {
+        padding: 20px;
+    }
+
+    .btn-download {
+        min-width: 180px;
+        padding: 12px 20px;
+        font-size: 1rem;
     }
 }
