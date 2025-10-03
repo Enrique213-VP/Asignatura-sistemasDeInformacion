@@ -1,5 +1,5 @@
 const ATTENDANCE_CONFIG = {
-    validCodes: ['SI', 'TALLER'],
+    validCodes: ['YUCA', 'API'],
     excelUrl: 'https://docs.google.com/spreadsheets/d/1WQ4HWhgxy5VIyP_l3ylDl-Ka1pSjB8XeiIF6opmDXjM/edit?usp=sharing'
 };
 
@@ -82,7 +82,7 @@ let lastAttemptTime = 0;
 const MAX_ATTEMPTS = 5;
 const COOLDOWN_PERIOD = 30000;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
 });
 
@@ -127,21 +127,21 @@ function createModuleCard(module, index) {
 
 function toggleModule(card) {
     document.querySelectorAll('.module-card').forEach(c => c.classList.remove('active'));
-    
+
     card.classList.add('active');
 }
 
 function initializeEventListeners() {
     const attendanceInput = document.getElementById('attendanceCode');
     if (attendanceInput) {
-        attendanceInput.addEventListener('keypress', function(event) {
+        attendanceInput.addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
                 checkAttendance();
             }
         });
 
-        attendanceInput.addEventListener('input', function(event) {
+        attendanceInput.addEventListener('input', function (event) {
             const value = event.target.value;
             const sanitized = value.replace(/[^A-Za-z0-9]/g, '');
             if (sanitized !== value) {
@@ -150,7 +150,7 @@ function initializeEventListeners() {
         });
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         const modal = document.getElementById('modal');
         if (event.target === modal) {
             closeModal();
@@ -161,7 +161,7 @@ function initializeEventListeners() {
 function checkAttendance() {
     const input = document.getElementById('attendanceCode');
     const code = input.value.trim();
-    
+
     if (!code) {
         showModal("⚠️ Campo vacío", "Debe ingresar un código de acceso para continuar.");
         return;
@@ -170,7 +170,7 @@ function checkAttendance() {
     if (!checkRateLimit()) {
         const remainingTime = Math.ceil((COOLDOWN_PERIOD - (Date.now() - lastAttemptTime)) / 1000);
         showModal(
-            "⏰ Demasiados intentos", 
+            "⏰ Demasiados intentos",
             `Por favor espera ${remainingTime} segundos antes de intentar nuevamente.`
         );
         return;
@@ -184,7 +184,7 @@ function checkAttendance() {
 }
 
 function isValidCode(code) {
-    return ATTENDANCE_CONFIG.validCodes.some(validCode => 
+    return ATTENDANCE_CONFIG.validCodes.some(validCode =>
         validCode.toLowerCase() === code.toLowerCase()
     );
 }
@@ -192,11 +192,11 @@ function isValidCode(code) {
 function handleValidCode(input) {
     input.value = '';
     showModal(
-        "✅ ¡Código correcto!", 
+        "✅ ¡Código correcto!",
         "Redirigiendo al registro de asistencia...",
         2000
     );
-    
+
     setTimeout(() => {
         window.open(ATTENDANCE_CONFIG.excelUrl, '_blank');
         closeModal();
@@ -206,13 +206,13 @@ function handleValidCode(input) {
 function handleInvalidCode(input) {
     attemptCount++;
     lastAttemptTime = Date.now();
-    
+
     input.classList.add('error');
     input.style.animation = 'shake 0.5s';
-    
+
     const randomMessage = FUNNY_MESSAGES[Math.floor(Math.random() * FUNNY_MESSAGES.length)];
     showModal("🚫 ¡Ups! Código incorrecto", randomMessage);
-    
+
     setTimeout(() => {
         input.value = '';
         input.classList.remove('error');
@@ -236,11 +236,11 @@ function showModal(title, message, autoCloseTime = null) {
     const modal = document.getElementById('modal');
     const modalTitle = document.getElementById('modalTitle');
     const modalMessage = document.getElementById('modalMessage');
-    
+
     modalTitle.textContent = title;
     modalMessage.textContent = message;
     modal.style.display = 'block';
-    
+
     if (autoCloseTime) {
         setTimeout(() => {
             closeModal();
@@ -292,7 +292,7 @@ function getAttendanceStats() {
         attempts: attemptCount,
         lastAttempt: lastAttemptTime ? new Date(lastAttemptTime).toLocaleString() : null,
         cooldownActive: attemptCount >= MAX_ATTEMPTS && (Date.now() - lastAttemptTime) < COOLDOWN_PERIOD,
-        remainingCooldown: attemptCount >= MAX_ATTEMPTS ? 
+        remainingCooldown: attemptCount >= MAX_ATTEMPTS ?
             Math.max(0, COOLDOWN_PERIOD - (Date.now() - lastAttemptTime)) / 1000 : 0
     };
 }
@@ -312,7 +312,7 @@ function logMessage(message, type = 'info') {
     console.log(`[${timestamp}] ${type.toUpperCase()}: ${message}`);
 }
 
-window.onerror = function(message, source, lineno, colno, error) {
+window.onerror = function (message, source, lineno, colno, error) {
     console.error('Error global capturado:', {
         message,
         source,
