@@ -1,5 +1,5 @@
 const ATTENDANCE_CONFIG = {
-    validCodes: ['CLOUD', 'API'],
+    validCodes: ['SAP', 'TEST'],
     excelUrl: 'https://docs.google.com/spreadsheets/d/1WQ4HWhgxy5VIyP_l3ylDl-Ka1pSjB8XeiIF6opmDXjM/edit?usp=sharing'
 };
 
